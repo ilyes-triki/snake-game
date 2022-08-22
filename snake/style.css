@@ -1,0 +1,60 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0;
+   background-image: url(./resources/snake-backGround.png);
+}
+#gameSpeed {
+    width: 25vmin;
+    display: flex;
+}
+#gameDifficulty {
+    width: 25vmin;
+    display: flex;
+}
+.fa-caret-down {
+    margin-top: -5px;
+    
+}
+#arrows{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+}
+#options {
+
+background-color: #ccc;
+margin: 5px;
+width: 25vmin;
+height: 100vmin;
+}
+#game-board {
+    background-color: #91e59fba;
+    height: 100vmin;
+    width: 100vmin;
+    display: grid;
+    grid-template-columns: repeat(21 , 1fr);
+    grid-template-rows: repeat(21 , 1fr);
+}
+.snake {
+    background-color: black;
+    border: .25vmin solid #ccc; 
+    border-radius: 50%;   
+}
+.food {
+    background-color: hsl(0, 100%, 50%);
+    border: .25vmin solid black; 
+    border-radius: 50%; 
+}
+.fa-caret-down:hover {
+    cursor: pointer;
+    
+}
+.fa-caret-up:hover {
+    cursor: pointer;
+}
