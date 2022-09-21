@@ -3,8 +3,10 @@ import {draw as drawFood , update as updateFood , getDifficulty} from './food.js
 import {outsideGrid} from './grid.js'
 
 
-let lastRenderTime = 0 
+let lastRenderTime = 1
 const gameBoard = document.getElementById('game-board')
+const restart = document.querySelector(".custom-btn")
+let isPaused = false
 let gameOver = false
 function main(currentTime) {
 if(gameOver){
@@ -15,7 +17,7 @@ if(gameOver){
 }
 
 window.requestAnimationFrame(main)
-const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000 
+const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
 if( secondsSinceLastRender < 1 / SNAKE_SPEED) return
 
 lastRenderTime = currentTime
@@ -47,3 +49,12 @@ drawFood(gameBoard)
 function checkDeath () {
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
 }
+restart.addEventListener('click' , (e) => {
+if (isPaused)
+resumeGame()
+
+ else 
+ pauseGame()
+ 
+})
+

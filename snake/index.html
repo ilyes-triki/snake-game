@@ -9,32 +9,40 @@
    <link rel="stylesheet" href="./style.css">
     
 </head>
+
 <body>
-   <div id="options">
-    <p>score : <span id="score"> 0 </span></p>
-
-    <div id="gameSpeed">
-        <p> <span>game speed :</span><span id="speed">1</span> 
-            <div id="arrows">
-            <i class="fa-solid fa-caret-up fa-caret-up-speed"></i>
-            <i class="fa-solid fa-caret-down fa-caret-down-speed "></i>
-            </div>
-        </p>
-    </div>
-
-    <div id="gameDifficulty">
-        <p> <span>game difficulty :</span><span id="difficulty">1</span> 
-            <div id="arrows">
-            <i class="fa-solid fa-caret-up fa-caret-up-diff"></i>
-            <i class="fa-solid fa-caret-down fa-caret-down-diff"></i>
-            </div>
-        </p>
-    </div>
+    <div class="background">
+        <img src="cpu new logo.png" alt="">
+       </div>
+<div class="game">
+    <div id="options">
+        <p>score : <span id="score"> 0 </span></p>
     
-     
-   </div>
-   
-    <div id="game-board"></div>
+        <div id="gameSpeed">
+            <p> <span>game speed :</span><span id="speed">1</span> 
+                <div id="arrows">
+                <i class="fa-solid fa-caret-up fa-caret-up-speed"></i>
+                <i class="fa-solid fa-caret-down fa-caret-down-speed "></i>
+                </div>
+            </p>
+        </div>
+    
+        <div id="gameDifficulty">
+            <p> <span>game difficulty :</span><span id="difficulty">1</span> 
+                <div id="arrows">
+                <i class="fa-solid fa-caret-up fa-caret-up-diff"></i>
+                <i class="fa-solid fa-caret-down fa-caret-down-diff"></i>
+                </div>
+            </p>
+        </div>
+        
+        <div class="container">
+            <button class="custom-btn">pause</button>
+           </div>
+       </div>
+       
+        <div id="game-board"></div>
+</div>
     <script src="./js/game.js" defer type="module"></script>
     <script src="https://kit.fontawesome.com/a1509d45ab.js" crossorigin="anonymous"></script>
     
