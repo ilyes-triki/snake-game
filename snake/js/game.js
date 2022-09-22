@@ -10,9 +10,11 @@ const gameBoard = document.getElementById('game-board')
 let gameOver = false
 function main(currentTime) {
 if(gameOver){
+   document.getElementById("fail").play()
    if(confirm("you lost , your press ok to restart ")){
     window.location = './'
    }
+   
  return
 }
 
