@@ -19,8 +19,10 @@ export function getDifficulty ( ) {
 }
 export function update() {
     if(onSnake(food)){
+      document.getElementById("succes").play()
         expandSnake(EXPANSION_RATE)
         food = getRandomFoodPosition()
+       
     }
    
 }
