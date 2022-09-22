@@ -1,8 +1,10 @@
 import { getInputDirection } from "./input.js"
 
+
 let speed = document.getElementById('speed')
 let speedUp = document.querySelector(".fa-caret-up-speed")
 let speedDown = document.querySelector(".fa-caret-down-speed")
+const restart = document.querySelector(".custom-btn")
 const snakeBody = [
     {x:11 , y:11},  
 ]
@@ -20,7 +22,7 @@ speedUp.addEventListener('click' , e=> {
 
 
 
-
+    export let isPaused = false
 export let SNAKE_SPEED = speed.innerHTML
 
 
@@ -29,13 +31,17 @@ export function gameSpeed () {
 }
 
 export function update() {
-    addSegments()
-    const inputDirection = getInputDirection()
-   for (let i = snakeBody.length - 2 ; i >= 0 ; i--) {
-    snakeBody[i+1] = {... snakeBody[i]} 
-    }
-    snakeBody[0].x += inputDirection.x
-    snakeBody[0].y += inputDirection.y
+     if(isPaused) {
+return
+     } else {
+        addSegments()
+        const inputDirection = getInputDirection()
+       for (let i = snakeBody.length - 2 ; i >= 0 ; i--) {
+        snakeBody[i+1] = {... snakeBody[i]} 
+        }
+        snakeBody[0].x += inputDirection.x
+        snakeBody[0].y += inputDirection.y
+     }
 }
 export function draw(gameBoard) {
     snakeBody.forEach(segment => { 
@@ -76,3 +82,16 @@ export function snakeIntersection () {
 export function gameScore () {
     return score.innerHTML = snakeBody.length - 1
 }
+restart.addEventListener('click' , (e) => {
+    if (isPaused)
+    {isPaused = false
+      restart.innerHTML="Pause"}
+    
+     else 
+     {
+      isPaused = true
+      restart.innerHTML = "Resume"
+     }
+     
+    })
+    console.log(isPaused)
