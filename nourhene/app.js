@@ -4,7 +4,7 @@ let joueur = document.getElementById("joueur");
 let score1 = document.getElementById("score1");
 let score2 = document.getElementById("score2");
 let scoreNul = document.getElementById("scoreNul");
-
+let restart = document.querySelector(".custom-btn")
 let state = {
     joueurEnCours: 1,
     scoreJ1: 0,
@@ -71,11 +71,11 @@ const jouerCase = (e) => {
    if(state[idCase] !== 0  ) return;
 
    state[idCase] = state.joueurEnCours; 
-  
+
    let isVictoire = verifierVictoire();
    if(isVictoire === true) {
     alert("le gagnant est le joueur" + state.joueurEnCours);
-    if(state.joueurEnCours =1){
+    if(state.joueurEnCours == 1){
         state.scoreJ1++;
         score1.textContent = state.scoreJ1;
     }else {
@@ -93,6 +93,7 @@ const jouerCase = (e) => {
    } else if(isVictoire === false)
    if(state.joueurEnCours === 1){
     e.target.textContent = "X";
+    e.target.style.color = "#19a6da"
     state.joueurEnCours = 2;
     joueur.textContent = "2";
    } else {
@@ -106,3 +107,6 @@ cases.forEach((el) =>{
 })
 
 
+restart.addEventListener("click",e => {
+   window.location="/index.html"
+})
