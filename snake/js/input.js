@@ -1,3 +1,5 @@
+
+
 let inputDirection = { x:0 , y:0}
 let lastInputDirection = {x : 0 , y : 0}
 window.addEventListener('keydown' , e => {
@@ -24,6 +26,29 @@ window.addEventListener('keydown' , e => {
 
             inputDirection = {x: 1 , y:0}
             break
+            case 'z' :
+                if(lastInputDirection.y !== 0 ) break
+                inputDirection = {x:0 , y:-1}
+                break
+    
+            case 's' :
+                if(lastInputDirection.y !== 0 ) break
+    
+                inputDirection = {x:0 , y:1}
+                break
+    
+            case 'q' :
+                if(lastInputDirection.x !== 0 ) break
+    
+                inputDirection = {x: -1 , y:0}
+                break
+    
+            case 'd' :
+                if(lastInputDirection.x !== 0 ) break
+    
+                inputDirection = {x: 1 , y:0}
+                break
+       
 
     }
 })

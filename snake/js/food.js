@@ -42,3 +42,18 @@ function getRandomFoodPosition() {
     return newFoodPosition
     
 }
+window.addEventListener('keydown' , e => {
+  switch(e.key) {
+      
+           case "m" : 
+           difficulty.innerHTML = parseInt(difficulty.innerHTML , 10) +1
+           break
+           case "l" : 
+           if(difficulty.innerHTML == 1)
+           break 
+           else
+           difficulty.innerHTML = parseInt(difficulty.innerHTML , 10) -1
+           break
+  }
+
+})

@@ -1,6 +1,7 @@
+
 import { getInputDirection } from "./input.js"
 
-
+let diff = document.getElementById("difficulty")
 let speed = document.getElementById('speed')
 let speedUp = document.querySelector(".fa-caret-up-speed")
 let speedDown = document.querySelector(".fa-caret-down-speed")
@@ -84,7 +85,10 @@ export function snakeIntersection () {
 
 }
 export function gameScore () {
-    return score.innerHTML = snakeBody.length - 1
+    if (snakeBody.length == 1)
+    return score.innerHTML = 1
+    else
+    return score.innerHTML = (snakeBody.length - 1) + ( parseInt(diff.innerHTML , 10) + parseInt(speed.innerHTML , 10))
 }
 restart.addEventListener('click' , (e) => {
     if (isPaused)
@@ -98,4 +102,28 @@ restart.addEventListener('click' , (e) => {
      }
      
     })
-    console.log(isPaused)
+    window.addEventListener('keydown' , e => {
+        switch(e.key) {
+            case "p" :
+                if (isPaused)
+                {isPaused = false
+                  restart.innerHTML="Pause"}
+                
+                 else 
+                 {
+                  isPaused = true
+                  restart.innerHTML = "Resume"
+                 }
+                 break
+                 case "+" : 
+                 speed.innerHTML = parseInt(speed.innerHTML , 10) +1
+                 break
+                 case "-" : 
+                 if(speed.innerHTML == 1)
+                 break 
+                 else
+                 speed.innerHTML = parseInt(speed.innerHTML , 10) -1
+                 break
+        }
+
+    })
